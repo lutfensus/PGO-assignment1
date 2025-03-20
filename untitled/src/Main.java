@@ -91,7 +91,7 @@ public class Main {
 
         int[] rotated = new int[n];
         for (int i = 0; i < n; i++) {
-            int newIndex = (i + n - positions) % n;
+            int newIndex = (i + positions) % n;
             rotated[newIndex] = array[i];
         }
 
