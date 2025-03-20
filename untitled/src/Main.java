@@ -9,6 +9,8 @@ public class Main {
         int dom = findDominant(outArray2);
         System.out.println(dom);
 
+        int[] in3 = {1, 2, 3, 4, 5};
+        System.out.println(java.util.Arrays.toString(rotateArray(in3,2)));
 
     }
 
@@ -68,6 +70,34 @@ public class Main {
         return -1;
     }
 
+    // TASK 3
+    /**
+     * This method performs a rotation of array elements by the given number of positions.
+     *
+     * @param array array of integers
+     * @param positions number of positions to shift
+     * @return new array after performing the rotation
+     *
+     *
+     */
+    public static int[] rotateArray(int[] array, int positions) {
+        // Your code here
+        if (array == null || array.length <= 1) {
+            return array;
+        }
+
+        int n = array.length;
+        positions = positions % n;
+
+        int[] rotated = new int[n];
+        for (int i = 0; i < n; i++) {
+            int newIndex = (i + n - positions) % n;
+            rotated[newIndex] = array[i];
+        }
+
+        return rotated;
 
 
+
+    }
 }
